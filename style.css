@@ -4,6 +4,9 @@ body {
   background: rgb(20, 20, 20);
   overflow: hidden;
   font-family: 'Roboto';
+  // Push down the wrapper by half the page
+  margin: 50% 0 0;
+  position: relative;
 }
 
 .wrapper {
@@ -11,12 +14,13 @@ body {
   height: 100%;
   width: 60%;
   margin: 0 auto;
+  perspective: 450px;
 }
 
 .scroll-text {
   color: #ffc909;
   font-size: 3vw;
-  line-height: 1.5rem;
+  line-height: 1.5em;
   font-weight: bold;
   text-align: justify;
   position: relative;
@@ -31,9 +35,11 @@ h2 {
 @keyframes scroll {
   from {
     top: 0;
+    transform: translateZ(0) rotateX(20deg);
   }
 
   to {
     top: -7500px;
+    transform: translateZ(-2500px) rotateX(21deg);
   }
 }
